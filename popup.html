@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <title>JoinBareng Quick Launch</title>
+  <style>
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; margin: 12px; width: 300px; }
+    h3 { margin: 0 0 8px; font-size: 16px; }
+    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+    .btn {
+      padding: 10px 12px; border: 0; border-radius: 10px;
+      background: #111827; color: #fff; font-weight: 700; cursor: pointer;
+    }
+    .btn.secondary { background: #374151; }
+    .row { display: flex; justify-content: space-between; align-items: center; margin-top: 10px; }
+    .label { font-size: 13px; }
+    .select, .input { width: 100%; padding: 8px; border-radius: 8px; border: 1px solid #d1d5db; }
+    .muted { font-size: 12px; color: #6b7280; margin-top: 8px; }
+    .link { margin-top: 10px; font-size: 12px; }
+    .link a { color: #111827; font-weight: 700; text-decoration: none; }
+  </style>
+</head>
+<body>
+  <h3>JoinBareng Quick Launch</h3>
+
+  <div class="grid">
+    <button class="btn" data-target="home">Buka Beranda</button>
+    <button class="btn" data-target="marketplace">Marketplace</button>
+    <button class="btn secondary" data-target="dashboard">Login/Dashboard</button>
+    <button class="btn secondary" data-target="help">Bantuan</button>
+  </div>
+
+  <div class="row" style="margin-top:12px;">
+    <div class="label">Buka di:</div>
+    <select id="openIn" class="select">
+      <option value="newtab">Tab baru</option>
+      <option value="current">Ganti tab aktif</option>
+    </select>
+  </div>
+
+  <div class="row" style="margin-top:8px;">
+    <div class="label">Klik ikon:</div>
+    <select id="clickAction" class="select">
+      <option value="popup">Tampilkan popup ini</option>
+      <option value="open">Langsung buka default</option>
+    </select>
+  </div>
+
+  <div class="row" style="margin-top:8px;">
+    <div class="label">Default tujuan:</div>
+    <select id="defaultTarget" class="select">
+      <option value="home">Beranda</option>
+      <option value="marketplace">Marketplace</option>
+      <option value="dashboard">Login/Dashboard</option>
+      <option value="help">Bantuan</option>
+    </select>
+  </div>
+
+  <div class="row" style="margin-top:8px;">
+    <label class="label"><input type="checkbox" id="attachUTM" /> Tambahkan UTM</label>
+  </div>
+
+  <div class="grid" style="margin-top:8px;">
+    <input id="utm_source" class="input" placeholder="utm_source" />
+    <input id="utm_medium" class="input" placeholder="utm_medium" />
+    <input id="utm_campaign" class="input" placeholder="utm_campaign" />
+    <button id="save" class="btn">Simpan</button>
+  </div>
+
+  <div class="link"><a id="openOptions" href="#">Buka halaman pengaturan lengkap…</a></div>
+  <div class="muted">Shortcut: Alt+Shift+J (bisa diubah di chrome://extensions/shortcuts)</div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

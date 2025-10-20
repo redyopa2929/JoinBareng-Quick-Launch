@@ -1,0 +1,42 @@
+{
+  "manifest_version": 3,
+  "name": "JoinBareng Quick Launch",
+  "description": "Satu klik ke JoinBareng: pilih buka di tab baru atau ganti tab aktif. Ada popup, context menu, dan shortcut keyboard.",
+  "version": "1.0.2",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "action": {
+    "default_title": "JoinBareng Quick Launch",
+    "default_popup": "popup.html"
+  },
+  "options_page": "options.html",
+
+  // ✅ GANTI INI: pakai scripts, bukan service_worker
+  "background": {
+    "scripts": ["background.js"]
+  },
+
+  "permissions": [
+    "storage",
+    "tabs",
+    "menus"          // di Firefox pakai "menus" (bukan "contextMenus")
+  ],
+  "commands": {
+    "open-joinbareng": {
+      "suggested_key": {
+        "default": "Alt+Shift+J",
+        "mac": "Alt+Shift+J"
+      },
+      "description": "Buka JoinBareng (sesuai setelan default)"
+    }
+  },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "quicklaunch@joinbareng.com",
+      "strict_min_version": "109.0"
+    }
+  }
+}
